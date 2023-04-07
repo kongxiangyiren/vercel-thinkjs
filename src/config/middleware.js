@@ -15,7 +15,7 @@ module.exports = [
   {
     handle: cors,
     options: {
-      origin: function(ctx) {
+      origin: function (ctx) {
         // 设置允许来自指定域名请求
         if (ctx.url.slice(0, 4) === '/api') {
           return '*'; // 允许来自所有域名请求
@@ -35,7 +35,21 @@ module.exports = [
     options: {
       root: path.join(think.ROOT_PATH, 'www'),
       publicPath: /^\/(static|favicon\.ico|swagger)/,
-      gzip: true
+      gzip: true,
+      notFoundNext: true,
+
+      setHeaders: (res, path, stats) => {
+        if (!isVercel) {
+          return true;
+        }
+        // 设置缓存
+        if (/(\.jpe?g|\.png|\.gif|\.svg|\.webp)$/i.test(path)) {
+          res.setHeader('Cache-Control', 'max-age=' + 30 * 24 * 60 * 60);
+        }
+        if (/(\.js|\.css|\.json)$/i.test(path)) {
+          res.setHeader('Cache-Control', 'max-age=' + 24 * 60 * 60);
+        }
+      }
     }
   },
   {
