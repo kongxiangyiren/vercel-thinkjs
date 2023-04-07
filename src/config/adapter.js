@@ -2,10 +2,10 @@ const fileCache = require('think-cache-file');
 const nunjucks = require('think-view-nunjucks');
 const fileSession = require('think-session-file');
 const mysql = require('think-model-mysql');
-const {Console, File, DateFile} = require('think-logger3');
+const { Console, File, DateFile } = require('think-logger3');
 const path = require('path');
 const isDev = think.env === 'development' || think.env === 'vercel';
-
+const isVercel = think.env === 'vercel';
 /**
  * cache adapter config
  * @type {Object}
@@ -17,7 +17,9 @@ exports.cache = {
   },
   file: {
     handle: fileCache,
-    cachePath: path.join(think.ROOT_PATH, '_tmp/runtime/cache'), // absoulte path is necessarily required
+    cachePath: isVercel
+      ? '/tmp/cache'
+      : path.join(think.ROOT_PATH, 'runtime/cache'), // absoulte path is necessarily required
     pathDepth: 1,
     gcInterval: 24 * 60 * 60 * 1000 // gc interval
   }
@@ -63,7 +65,9 @@ exports.session = {
   },
   file: {
     handle: fileSession,
-    sessionPath: path.join(think.ROOT_PATH, '_tmp/runtime/session')
+    sessionPath: isVercel
+      ? '/tmp/session'
+      : path.join(think.ROOT_PATH, 'runtime/session')
   }
 };
 
