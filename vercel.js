@@ -2,7 +2,7 @@ const path = require('path');
 const Application = require('thinkjs');
 
 const Loader = require('thinkjs/lib/loader');
-class NowLoader extends Loader {
+class VercelLoader extends Loader {
   writeConfig() {
 
   }
@@ -25,7 +25,7 @@ const app = new Application({
   }
 });
 
-const loader = new NowLoader(app.options);
+const loader = new VercelLoader(app.options);
 loader.loadAll('worker');
 think.app.emit('appReady');
 module.exports = think.app.callback();

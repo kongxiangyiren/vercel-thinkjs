@@ -1,6 +1,6 @@
 const path = require('path');
 const isDev = think.env === 'development';
-const isNow = think.env === 'vercel';
+const isVercel = think.env === 'vercel';
 module.exports = [
   {
     handle: 'meta',
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     handle: 'resource',
-    enable: isDev || isNow,
+    enable: isDev || isVercel,
     options: {
       root: path.join(think.ROOT_PATH, 'www'),
       publicPath: /^\/(static|favicon\.ico)/
