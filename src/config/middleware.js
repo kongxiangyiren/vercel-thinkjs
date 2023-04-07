@@ -15,7 +15,7 @@ module.exports = [
   {
     handle: cors,
     options: {
-      origin: function (ctx) {
+      origin: function(ctx) {
         // 设置允许来自指定域名请求
         if (ctx.url.slice(0, 4) === '/api') {
           return '*'; // 允许来自所有域名请求
@@ -28,12 +28,14 @@ module.exports = [
       // exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'] //设置获取其他自定义字段
     }
   },
+  // 静态文件设置
   {
     handle: 'resource',
     enable: isDev || isVercel,
     options: {
       root: path.join(think.ROOT_PATH, 'www'),
-      publicPath: /^\/(static|favicon\.ico)/
+      publicPath: /^\/(static|favicon\.ico|swagger)/,
+      gzip: true
     }
   },
   {
@@ -46,7 +48,7 @@ module.exports = [
   {
     handle: 'payload',
     options: {
-      uploadDir: path.join(think.RUNTIME_PATH, '_tmp'),
+      uploadDir: isVercel ? '/tmp/_tmp' : path.join(think.RUNTIME_PATH, '_tmp'),
       keepExtensions: true,
       limit: '5mb'
     }

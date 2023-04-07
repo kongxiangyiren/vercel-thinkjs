@@ -1,3 +1,3 @@
 module.exports = [
-  ['/api', '/api/index'] 
+  ['/api', '/api/index']
 ];

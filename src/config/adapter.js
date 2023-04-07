@@ -1,7 +1,7 @@
 const fileCache = require('think-cache-file');
 const nunjucks = require('think-view-nunjucks');
 const fileSession = require('think-session-file');
-const mysql = require('think-model-mysql');
+// const mysql = require('think-model-mysql');
 const { Console, File, DateFile } = require('think-logger3');
 const path = require('path');
 const isDev = think.env === 'development' || think.env === 'vercel';
@@ -29,26 +29,26 @@ exports.cache = {
  * model adapter config
  * @type {Object}
  */
-exports.model = {
-  type: 'mysql',
-  common: {
-    logConnect: isDev,
-    logSql: isDev,
-    logger: msg => think.logger.info(msg)
-  },
-  mysql: {
-    handle: mysql,
-    database: '',
-    prefix: 'think_',
-    encoding: 'utf8',
-    host: '127.0.0.1',
-    port: '',
-    user: 'root',
-    password: 'root',
-    dateStrings: true,
-    acquireWaitTimeout: isDev ? 3000 : 0
-  }
-};
+// exports.model = {
+//   type: 'mysql',
+//   common: {
+//     logConnect: isDev,
+//     logSql: isDev,
+//     logger: msg => think.logger.info(msg)
+//   },
+//   mysql: {
+//     handle: mysql,
+//     database: '',
+//     prefix: 'think_',
+//     encoding: 'utf8',
+//     host: '127.0.0.1',
+//     port: '',
+//     user: 'root',
+//     password: 'root',
+//     dateStrings: true,
+//     acquireWaitTimeout: isDev ? 3000 : 0
+//   }
+// };
 
 /**
  * session adapter config

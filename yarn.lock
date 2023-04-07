@@ -326,11 +326,6 @@ balanced-match@^1.0.0:
   resolved "https://registry.npmmirror.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bignumber.js@9.0.0:
-  version "9.0.0"
-  resolved "https://registry.npmmirror.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
-  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
-
 boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
@@ -556,14 +551,14 @@ date-format@^4.0.14:
   resolved "https://registry.npmmirror.com/date-format/-/date-format-4.0.14.tgz#7a8e584434fb169a521c8b7aa481f355810d9400"
   integrity sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==
 
-debug@^2.6.0, debug@^2.6.1, debug@^2.6.3, debug@^2.6.4, debug@^2.6.8:
+debug@^2.6.0, debug@^2.6.1, debug@^2.6.3, debug@^2.6.8:
   version "2.6.9"
   resolved "https://registry.npmmirror.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.0, debug@^3.1.0, debug@^3.2.7:
+debug@^3.1.0, debug@^3.2.7:
   version "3.2.7"
   resolved "https://registry.npmmirror.com/debug/-/debug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
   integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
@@ -1643,16 +1638,6 @@ mute-stream@0.0.7:
   resolved "https://registry.npmmirror.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha512-r65nCZhrbXXb6dXOACihYApHw2Q6pV0M3V0PSxd74N0+D8nzAdEAITq2oAjA1jVnKI+tGvEBUpqiMh0+rW6zDQ==
 
-mysql@^2.16.0:
-  version "2.18.1"
-  resolved "https://registry.npmmirror.com/mysql/-/mysql-2.18.1.tgz#2254143855c5a8c73825e4522baf2ea021766717"
-  integrity sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==
-  dependencies:
-    bignumber.js "9.0.0"
-    readable-stream "2.3.7"
-    safe-buffer "5.1.2"
-    sqlstring "2.3.1"
-
 mz@^2.3.1:
   version "2.7.0"
   resolved "https://registry.npmmirror.com/mz/-/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"
@@ -1856,19 +1841,6 @@ raw-body@^2.2.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-readable-stream@2.3.7:
-  version "2.3.7"
-  resolved "https://registry.npmmirror.com/readable-stream/-/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
-  integrity sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.3"
-    isarray "~1.0.0"
-    process-nextick-args "~2.0.0"
-    safe-buffer "~5.1.1"
-    string_decoder "~1.1.1"
-    util-deprecate "~1.0.1"
-
 readable-stream@^2.2.2:
   version "2.3.8"
   resolved "https://registry.npmmirror.com/readable-stream/-/readable-stream-2.3.8.tgz#91125e8042bba1b9887f49345f6277027ce8be9b"
@@ -1963,15 +1935,15 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.npmmirror.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
   integrity sha512-Cun9QucwK6MIrp3mry/Y7hqD1oFqTYLQ4pGxaHTjIdaFDWRGGLikqp6u8LcWJnzpoALg9hap+JGk8sFIUuEGNA==
 
-safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
-  version "5.1.2"
-  resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
-  integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
-
 safe-buffer@5.2.1:
   version "5.2.1"
   resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+
+safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+  version "5.1.2"
+  resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
+  integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
 safe-regex-test@^1.0.0:
   version "1.0.0"
@@ -2071,11 +2043,6 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.npmmirror.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
-
-sqlstring@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmmirror.com/sqlstring/-/sqlstring-2.3.1.tgz#475393ff9e91479aea62dcaf0ca3d14983a7fb40"
-  integrity sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==
 
 stack-trace@^0.0.9:
   version "0.0.9"
@@ -2230,7 +2197,7 @@ think-cache-file@^1.0.8:
     think-helper "^1.1.3"
     think-store-file "^1.0.12"
 
-think-cache@^1.0.0, think-cache@^1.0.7:
+think-cache@^1.0.0:
   version "1.1.2"
   resolved "https://registry.npmmirror.com/think-cache/-/think-cache-1.1.2.tgz#1805d2b3ae4f6dd3a2f7c135ae1ea0281bb86d2c"
   integrity sha512-Xgp0vr4IbgN3YacTct1gWNtenxnpgh6vI/0Em5S6z3iQpWLEI1CTV9L5d78/1ZMNELO0GVk0+MdqEUSbaa19wQ==
@@ -2285,7 +2252,7 @@ think-gc@^1.0.3:
     think-helper "^1.1.3"
     think-ms "^1.0.1"
 
-think-helper@^1.0.0, think-helper@^1.0.22, think-helper@^1.1.2, think-helper@^1.1.3, think-helper@latest:
+think-helper@^1.0.0, think-helper@^1.1.3, think-helper@latest:
   version "1.1.4"
   resolved "https://registry.npmmirror.com/think-helper/-/think-helper-1.1.4.tgz#aedf93e5e32f3fa43ef952ad50e5799fe5ba1b92"
   integrity sha512-JRAgo8CuevJ9rXazGKR91EQMbTA2xxe5w0f8/P8yeyQkaen0ZcJv4laurisg/n1gjE/xuy4zyevhCTWKVgxf8g==
@@ -2294,13 +2261,6 @@ think-helper@^1.0.0, think-helper@^1.0.22, think-helper@^1.1.2, think-helper@^1.
     lodash.merge "^4.6.2"
     ms "^1.0.0"
     uuid "^7.0.3"
-
-think-instance@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmmirror.com/think-instance/-/think-instance-1.0.2.tgz#2b6df0426fc667739605f47b95b21c819ff4372d"
-  integrity sha512-vLSgu8fBV0Kg+4pS8lyn0Jkeb0GcZZ8hmRYjKKwyOCNVt9wIPeKfrYx1SvKTbTUxJwNjgf5AloW0fJdTCXHLmg==
-  dependencies:
-    think-helper "^1.1.3"
 
 think-loader@^1.0.0:
   version "1.2.2"
@@ -2341,51 +2301,12 @@ think-mock-http@^1.0.0, think-mock-http@^1.0.6:
     debug "^2.6.1"
     think-helper "^1.1.3"
 
-think-model-abstract@^1.2.0, think-model-abstract@^1.2.2:
-  version "1.6.5"
-  resolved "https://registry.npmmirror.com/think-model-abstract/-/think-model-abstract-1.6.5.tgz#833253fbdc77f93b0422628e8ba3f0a58d6813c2"
-  integrity sha512-ojDTK1es/KqX+92iQdIeN8Bo7ABZW4l0rKDbxz60NTWD0nMGSaP5SFLNir1OhI/wxX1llv2Cw0h8JftTRfW+DA==
-  dependencies:
-    debug "^3.0.0"
-    think-helper "^1.1.3"
-
-think-model-mysql@^1.0.0:
-  version "1.1.7"
-  resolved "https://registry.npmmirror.com/think-model-mysql/-/think-model-mysql-1.1.7.tgz#95434efa90dfaf465baeb2e17dd22bfcb84a4021"
-  integrity sha512-HQN66b7RcIzKPnfS2xfDAPlgoy5aFaw4oOMBgHzraMzUco5R/CxoyWrbrL+C+zbKTjstY5UMo5GCJFPBqzJOng==
-  dependencies:
-    think-debounce "^1.0.4"
-    think-helper "^1.1.2"
-    think-model-abstract "^1.2.2"
-    think-mysql "^1.2.4"
-
-think-model@^1.0.0:
-  version "1.5.4"
-  resolved "https://registry.npmmirror.com/think-model/-/think-model-1.5.4.tgz#c1f98c40808a843bff023bc50e1b5772240291aa"
-  integrity sha512-oZJGL0c/WHKnQEU+h3f7HfgDwTEc/AvgkY80qV4tvRTAZFjxPPz/uPBqEvyUEj8+ZtHzsBCa2RoVazPR8EoP0A==
-  dependencies:
-    think-cache "^1.0.7"
-    think-debounce "^1.0.3"
-    think-helper "^1.0.22"
-    think-model-abstract "^1.2.0"
-
 think-ms@^1.0.1:
   version "1.0.3"
   resolved "https://registry.npmmirror.com/think-ms/-/think-ms-1.0.3.tgz#7b23b65e92e0dca9639ac452128c7debe1cc3c14"
   integrity sha512-2Ppgqt1oxtj52fuarlERMJaLtwGkDvp9zf7x17cDzEpWILBONuBv4/axz9QljK12BwlAkUV/I9jKsB5TKRZv6A==
   dependencies:
     ms "^1.0.0"
-
-think-mysql@^1.2.4:
-  version "1.4.4"
-  resolved "https://registry.npmmirror.com/think-mysql/-/think-mysql-1.4.4.tgz#75fe0dfd377de5333ced0df131fdec0057cbe528"
-  integrity sha512-COn8a6gq+wJqUNbkMRgHpJCgSzo5FGCBU4c05B38bhUoSuOGYVcEkLH0qd+uEy8SpivHPTSCNzzCJn7ZlUtbKA==
-  dependencies:
-    debug "^2.6.4"
-    mysql "^2.16.0"
-    think-debounce "^1.0.3"
-    think-helper "^1.1.3"
-    think-instance "^1.0.2"
 
 think-payload@^1.3.4:
   version "1.4.0"

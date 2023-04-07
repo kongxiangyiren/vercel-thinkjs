@@ -28,7 +28,7 @@ module.exports = class extends Base {
       rejectUnauthorized: false
     });
 
-    let { data: res } = await axios
+    const { data: res } = await axios
       .get('https://github.com/' + name, { httpsAgent: agent })
       .catch(err => err);
 
@@ -46,7 +46,7 @@ module.exports = class extends Base {
       '#user-profile-frame > div > div.mt-4.position-relative > div.js-yearly-contributions > div > div > div > svg > g > g'
     );
 
-    let contributions = [];
+    const contributions = [];
     let total = 0;
     for (let i = 0; i < data.length; i++) {
       const data2 = $(data[i]).children('rect');
@@ -68,14 +68,14 @@ module.exports = class extends Base {
 
     return {
       total: total,
-      contributions: this.list_split(contributions, 7),
+      contributions: this.listSplit(contributions, 7),
       code: 200,
       message: 'ok'
     };
   }
 
-  list_split(items, n) {
-    let result = [];
+  listSplit(items, n) {
+    const result = [];
     for (let i = 0, len = items.length; i < len; i += n) {
       result.push(items.slice(i, i + n));
     }
