@@ -30,6 +30,7 @@ module.exports = class extends Base {
     // 返回结果
     return this.json(data);
   }
+
   async getdata(name) {
     // 忽略证书 本地开了代理时使用
     const agent = new https.Agent({
@@ -67,13 +68,13 @@ module.exports = class extends Base {
         total += count;
         contributions.push({
           date: $(data2[j]).attr('data-date'),
-          count: count
+          count
         });
       }
     }
     // 成功返回
     return {
-      total: total,
+      total,
       contributions: this.listSplit(contributions, 7),
       code: 200,
       message: 'ok'

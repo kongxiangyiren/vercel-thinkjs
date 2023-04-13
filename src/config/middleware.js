@@ -15,7 +15,7 @@ module.exports = [
   {
     handle: cors,
     options: {
-      origin: function (ctx) {
+      origin: function(ctx) {
         // 设置允许来自指定域名请求
         if (ctx.url.slice(0, 4) === '/api') {
           return '*'; // 允许来自所有域名请求
