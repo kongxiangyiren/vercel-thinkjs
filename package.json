@@ -22,7 +22,7 @@
     "thinkjs": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.2.0",
+    "eslint": "^8.38.0",
     "eslint-config-think": "^1.0.0",
     "think-watcher": "^3.0.0"
   },
