@@ -1,0 +1,13 @@
+diff --git a/node_modules/zxinc-ipv6/findipv6.js b/node_modules/zxinc-ipv6/findipv6.js
+index 1020136..17a40ab 100644
+--- a/node_modules/zxinc-ipv6/findipv6.js
++++ b/node_modules/zxinc-ipv6/findipv6.js
+@@ -25,7 +25,7 @@ class IPDBv6 {
+     constructor(dbname = "ipv6wry.db") {
+ 
+         this.dbname = dbname;
+-        this.img = fs.readFileSync("./ipv6wry.db");
++        this.img = fs.readFileSync(this.dbname);
+ 
+         if (this.img.slice(0, 4).toString() != "IPDB") {
+             // 数据库格式错误

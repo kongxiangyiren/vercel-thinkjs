@@ -1,0 +1,107 @@
+const path = require('path');
+const cors = require('@koa/cors');
+const helmet = require('koa-helmet');
+const isDev = think.env === 'development';
+const isVercel = think.env === 'vercel';
+module.exports = [
+  {
+    handle: 'meta',
+    options: {
+      logRequest: isDev,
+      sendResponseTime: isDev
+    }
+  },
+  // 安全防护
+  // https://www.npmjs.com/package/helmet
+  {
+    handle: helmet,
+    options: {
+      contentSecurityPolicy: {
+        directives: {
+          'script-src-attr': ["'self'", "'unsafe-inline'"],
+          'script-src': ["'self'", "'unsafe-inline'", 'unpkg.com', 'cdnjs.cloudflare.com', 'npm.elemecdn.com'],
+          'img-src': ["'self'", 'data:', 'i.loli.net'],
+          upgradeInsecureRequests: null
+        }
+      },
+      crossOriginEmbedderPolicy: false,
+      crossOriginOpenerPolicy: false,
+      crossOriginResourcePolicy: false,
+      // dnsPrefetchControl: true,
+      // expectCt: false,
+      // frameguard: true,
+      // hidePoweredBy: true,
+      // hsts: true,
+      // ieNoOpen: true,
+      // noSniff: true,
+      originAgentCluster: false,
+      // permittedCrossDomainPolicies: true,
+      referrerPolicy: {
+        policy: ['origin', 'unsafe-url']
+      } // 引用策略
+      // xssFilter: true
+    }
+  },
+  // 添加 跨域配置
+  {
+    handle: cors,
+    options: {
+      origin: function(ctx) {
+        // 设置允许来自指定域名请求
+        if (ctx.url.slice(0, 4) === '/api') {
+          return '*'; // 允许来自所有域名请求
+        }
+      },
+      maxAge: 5, // 指定本次预检请求的有效期，单位为秒。
+      credentials: true // 是否允许发送Cookie
+      // allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], //设置所允许的HTTP请求方法
+      // allowHeaders: ['Content-Type', 'Authorization', 'Accept'], //设置服务器支持的所有头信息字段
+      // exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'] //设置获取其他自定义字段
+    }
+  },
+  // 静态文件设置
+  {
+    handle: 'resource',
+    enable: isDev || isVercel,
+    options: {
+      root: path.join(think.ROOT_PATH, 'www'),
+      publicPath: /^\/(assets|logo\.jpg|md|api\.json|robots\.txt)/,
+      gzip: true,
+      notFoundNext: true,
+
+      setHeaders: (res, path, stats) => {
+        if (!isVercel) {
+          return true;
+        }
+        // 设置缓存
+        if (/(\.jpe?g|\.png|\.gif|\.svg|\.webp)$/i.test(path)) {
+          res.setHeader('Cache-Control', 'max-age=' + 30 * 24 * 60 * 60);
+        }
+        if (/(\.js|\.css|\.js\.gz|\.css\.gz)$/i.test(path)) {
+          res.setHeader('Cache-Control', 'max-age=' + 24 * 60 * 60);
+        }
+      }
+    }
+  },
+  {
+    handle: 'trace',
+    enable: !think.isCli,
+    options: {
+      debug: isDev
+    }
+  },
+  {
+    handle: 'payload',
+    options: {
+      uploadDir: isVercel ? '/tmp/_tmp' : path.join(think.RUNTIME_PATH, '_tmp'),
+      keepExtensions: true,
+      limit: '5mb'
+    }
+  },
+  {
+    handle: 'router',
+    options: {}
+  },
+  'logic',
+  'controller'
+];
