@@ -19,7 +19,14 @@ module.exports = [
       contentSecurityPolicy: {
         directives: {
           'script-src-attr': ["'self'", "'unsafe-inline'"],
-          'script-src': ["'self'", "'unsafe-inline'", 'unpkg.com', 'cdnjs.cloudflare.com', 'npm.elemecdn.com'],
+          'script-src': [
+            "'self'",
+            "'unsafe-inline'",
+            'unpkg.com',
+            'cdnjs.cloudflare.com',
+            'npm.elemecdn.com',
+            'lib.baomitu.com'
+          ],
           'img-src': ["'self'", 'data:', 'i.loli.net'],
           upgradeInsecureRequests: null
         }
