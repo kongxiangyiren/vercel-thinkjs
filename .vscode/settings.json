@@ -1,0 +1,28 @@
+{
+  // 搜索排除
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/app": true,
+    "**/runtime": true,
+    "**/dist": true,
+    "**/www/assets":true
+  },
+  // 保存时自动格式化
+  // "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": true,
+    "strings": true
+  },
+  "files.associations": {
+    "*.config": "xml",
+  }
+}

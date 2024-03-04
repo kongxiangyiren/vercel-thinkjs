@@ -1,0 +1,83 @@
+{
+  "name": "vercel-thinkjs",
+  "description": "application created by thinkjs",
+  "version": "1.0.0",
+  "author": "空巷一人 <1530688385@qq.com>",
+  "scripts": {
+    "start": "node development.js",
+    "compile": "npm run format && npm run lint && tsc",
+    "lint": "tslint \"src/**/*.ts\"",
+    "vercel-build": "npm run compile",
+    "build": "node build.mjs",
+    "docker": "sh ./docker.sh",
+    "format": "prettier --write src/",
+    "doc": "apidoc -c ./apidoc.cjs -o www -t ./node_modules/@gitawego/apidoc-theme/template && mv ./www/index.html ./view/index.html",
+    "postinstall": "unzip -o ./data/IP2LOCATION-LITE-DB5.IPV6.BIN.zip -d ./data  && yarn doc"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "axios": "^1.6.4",
+    "cheerio": "^1.0.0-rc.12",
+    "ip2location-nodejs": "^9.6.1",
+    "think-cache": "^1.1.2",
+    "think-cache-file": "^1.1.2",
+    "think-logger3": "^1.4.0",
+    "think-model": "^1.5.4",
+    "think-session": "^1.1.6",
+    "think-session-file": "^1.1.4",
+    "think-view": "^1.0.13",
+    "think-view-nunjucks": "^1.0.11",
+    "thinkjs": "^3.2.15",
+    "thinkjs3-ts": "^1.0.1"
+  },
+  "devDependencies": {
+    "@gitawego/apidoc-theme": "^1.0.2",
+    "@types/koa": "*",
+    "@types/koa__cors": "^5.0.0",
+    "@types/node": "*",
+    "apidoc": "^1.2.0",
+    "node-notifier": "^10.0.1",
+    "prettier": "^3.1.1",
+    "think-inspect": "0.0.2",
+    "think-typescript": "^2.0.0",
+    "think-watcher": "^3.0.4",
+    "tslint": "^5.20.1",
+    "typescript": "^4.9.5"
+  },
+  "resolutions": {
+    "think-helper": "^1.1.4",
+    "formidable": "^2.1.2",
+    "ms": "^2.0.0",
+    "xml2js": "^0.5.0",
+    "validator": "file:pack/validator-13.11.0.tgz",
+    "think-payload": "file:pack/think-payload-1.4.0.tgz",
+    "think-validator": "file:pack/think-validator-1.6.7.tgz"
+  },
+  "overrides": {
+    "think-helper": "^1.1.4",
+    "formidable": "^2.1.2",
+    "ms": "^2.0.0",
+    "xml2js": "^0.5.0",
+    "validator": "file:pack/validator-13.11.0.tgz",
+    "think-payload": "file:pack/think-payload-1.4.0.tgz",
+    "think-validator": "file:pack/think-validator-1.6.7.tgz"
+  },
+  "repository": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
+  "readmeFilename": "README.md",
+  "thinkjs": {
+    "metadata": {
+      "name": "vercel-thinkjs",
+      "description": "application created by thinkjs",
+      "author": "空巷一人 <1530688385@qq.com>"
+    },
+    "projectName": "vercel-thinkjs",
+    "template": "kongxiangyiren/typescript",
+    "clone": false,
+    "isMultiModule": false
+  }
+}

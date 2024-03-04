@@ -1,0 +1,13 @@
+.gitignore
+.inscode
+.npmrc
+.prettierrc.cjs
+development.js
+inscode.js
+nginx.conf
+pm2.json
+production.js
+README.md
+Web.config
+Dockerfile
+docker.sh
