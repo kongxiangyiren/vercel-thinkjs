@@ -1,3 +1,7 @@
+# 此项目已废弃，最新版请跳转
+
+[hexo-kx-api](https://github.com/kongxiangyiren/hexo-kx-api)
+
 ## vercel
 
 点击部署
